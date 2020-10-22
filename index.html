@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!--cdn bootstrap-->
+  <link rel="stylesheet" href="index.css" />
+  <!--css-->
+
+  <script src="https://kit.fontawesome.com/d18748d11a.js" crossorigin="anonymous"></script>
+  <!--ícones-->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!--fonte-->
+</head>
+
+<body>
+  <div id="cadastro">
+    <div class="row">
+      <!--bootstrap-->
+      <div class="col-12 col-lg-5 imagem">
+        <img src="./assets/pug.jpg" class="imagem">
+      </div>
+
+      <div class="col-12 col-lg-7 form-fundo">
+        <div class="margin">
+          <h1>Create an Account!</h1>
+          <form id="form">
+            <div class="form-row">
+              <div class="form-group col-12 col-xl-6">
+                <input type="text" class="form-linha form-control" id="Name" placeholder="First Name">
+              </div>
+              <div class="margin-form form form-group col-12 col-xl-6">
+                <input type="phone" class="form-linha form-control" id="Phone" maxlength="16" placeholder="Phone">
+              </div>
+            </div>
+            <div class="form form-group">
+              <input type="email" class="form-linha form-control" id="Email" placeholder="Email Address">
+            </div>
+            <div class="form-row">
+              <div class="form form-group col-12 col-xl-6">
+                <input type="password" class="form-linha form-control" id="Password" placeholder="Password">
+              </div>
+              <div class="margin-form form form-group col-12 col-xl-6">
+                <input type="password" class="form-linha form-control" id="repeatPassword"
+                  placeholder="Repeat Password">
+              </div>
+              <button type="submit" class="btn button" id="account" onclick="return validarSenha()">Register
+                Account</button>
+
+              <div class="linha-horizontal"></div>
+
+              <hr size="100" width="100%">
+
+              </i><button type="button" class="button btn-gmail btn"><i class="icones fab fa-google"></i> Register with
+                Google</button>
+              <button type="button" class="button btn-facebook btn"><i class="icones fab fa-facebook-f"></i> Register
+                with Facebook</button>
+            </div>
+          </form>
+
+          <hr size="100" width="100%">
+
+          <div class="links-final">
+            <ul>
+              <li><a href="">Forgot Password?</a></li>
+              <li><a href="">Already have an account? Login!</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+  integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+  integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+<script>
+
+  /*
+  1 - O campo Phone deve aceitar apenas números e deve ter máscara 
+  2 - Caso o campo Repeat Password for diferente do Password, deve haver uma mensagem avisando
+  3 - Ao submeter o formulario deve ser apresentado os valores através de um alert*/
+
+
+  $(document).ready(function () { /*JQUERY - O campo Phone deve aceitar apenas números e deve ter máscara*/
+    $('#Phone').mask('(00) 00000-0000');
+  })
+
+
+  function validarSenha() { /*JS - Caso o campo Repeat Password for diferente do Password, deve haver uma mensagem avisando*/
+    Senha = document.getElementById('Password').value;
+    Repeat = document.getElementById('repeatPassword').value;
+
+    if (Senha != Repeat) {
+      alert("As Senhas estão diferentes!");
+      return false;
+    } else {
+      document.getElementById("Form").submit();
+    }
+  }
+
+  form.addEventListener('submit', mostrarDados); /*JS - Ao submeter o formulario deve ser apresentado os valores através de um alert*/
+
+  function mostrarDados() {
+    alert(`Dados: \nNome: ${Name.value} \nTelefone: ${Phone.value} \nEmail: ${Email.value} \nSenha: ${Password.value} \nSenha Repetida: ${repeatPassword.value}`)
+  }
+
+
+
+</script>
+
+</html>
